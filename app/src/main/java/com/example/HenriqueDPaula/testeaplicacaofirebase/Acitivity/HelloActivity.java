@@ -1,9 +1,10 @@
-package com.example.troli.testeaplicacaofirebase;
+package com.example.HenriqueDPaula.testeaplicacaofirebase.Acitivity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.troli.testeaplicacaofirebase.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -17,13 +18,13 @@ public class HelloActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
         mAuth = FirebaseAuth.getInstance();
-        txtLoginUsuario = findViewById(R.id.txtLoginUsuario);
+        loginUsuario = findViewById(R.id.loginUsuario);
 
     }
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        txtLoginUsuario.setText(currentUser.getEmail());
+        loginUsuario.setText(currentUser.getEmail());
 
     }
 }
